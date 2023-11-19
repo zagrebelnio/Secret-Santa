@@ -449,3 +449,30 @@ input[type=text]:focus, input[type=email]:focus {
         text-align: center;
     }
 }
+
+@media (max-width: 430px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+    }
+
+    .main-form input, p {
+        font-size: 12px;
+    }
+
+    .main-form h3 {
+        font-size: 20px;
+    }
+
+    .main-form {
+        padding: 1.5rem;
+    }
+}
