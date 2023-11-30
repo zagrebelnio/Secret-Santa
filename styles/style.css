@@ -143,14 +143,14 @@ h3 {
     background-color: white;
     margin: 0;
     padding: 0 10%;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     gap: 50px;
 }
 
 .santa-is-coming img {
-    width: 50%;
+    width: 40%;
 }
 
 .christmas-wish {
