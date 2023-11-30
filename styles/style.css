@@ -1,17 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Nunito:ital@0;1&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background: rgb(238,217,174);
-    background: linear-gradient(90deg, rgba(238,217,174,1) 0%, rgba(241,216,239,1) 50%, rgba(205,240,255,1) 100%);
+    font-family: 'DM Sans', sans-serif;
+    /* background: rgb(238,217,174); */
+    /* background: linear-gradient(90deg, rgba(238,217,174,1) 0%, rgba(241,216,239,1) 50%, rgba(205,240,255,1) 100%); */
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0;
+    
+    background-image: linear-gradient(
+        90deg, rgba(238,217,174,1) 0%, rgba(241,216,239,1) 50%, rgba(205,240,255,1) 100%
+    ), url("../images/gradient1.png");
+    
 }
 
 .text-green {
-    color: #29AF33;
+    color: #00873E;
 }
 
 body > * {
@@ -45,6 +51,8 @@ body > * {
 
 .nav-links a {
     color: black;
+    font-size: 18px;
+    font-weight: bold;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 10px;
@@ -52,13 +60,13 @@ body > * {
 }
 
 .nav-links a:nth-of-type(1) {
-    color: #29AF33;
+    color: #00873E;
 }
 
 .nav-links a:hover {
     color: white;
     text-decoration: underline;
-    background-color: #29AF33;
+    background-color: #00873E;
 }
 
 .nav-buttons {
@@ -69,54 +77,58 @@ body > * {
 .nav-buttons button {
     border: none;
     background: none;
-    width: 80px;
-    height: 50px;
+    padding: 1rem 2rem;
     font-weight: bold;
+    font-size: 18px;
     border-radius: 10px;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, opacity 0.2s;
 }
 
 .nav-buttons button:nth-of-type(2) {
     color: white;
-    background-color: #29AF33;
+    background-color: #00873E;
 }
 
 .nav-buttons button:hover {
-    background-color: #165f1b;
+    opacity: 0.7;
 }
 
 .nav-buttons button:nth-of-type(1):hover {
-    background: none;
-    border: 3px solid #29AF33;
+    color:white;
+    background-color: #00873E;
 }
 
 .christmas-time {
     height: 80vh;
     display: flex;
     align-items: center;
+    
 }
 
 .christmas-time img {
-    width: 70%;
+    width: 40%;
+    margin-left: 100px;
 }
 
 .card-heading {
-    font-size: 48px;
+    font-family: 'Yeseva One', serif;
+    font-size: 65px;
     letter-spacing: 2px;
 }
 
 .card-text {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 h3 {
-    font-size: 36px;
+    font-family: 'Yeseva One', serif;
+    font-size: 38px;
     margin: 0.5rem;
 }
 
 .card-button {
     border: none;
-    background-color:#29AF33;
+    background-color:#00873E;
     padding: 1em 3em;
     border-radius: 10px;
     color: white;
@@ -128,6 +140,9 @@ h3 {
 }
 
 .santa-is-coming {
+    background-color: white;
+    margin: 0;
+    padding: 0 10%;
     height: 80vh;
     display: flex;
     align-items: center;
@@ -139,6 +154,9 @@ h3 {
 }
 
 .christmas-wish {
+    background-color: white;
+    margin: 0;
+    padding: 0 10%;
     height: 120vh;
     display: flex;
     align-items: center;
@@ -153,7 +171,7 @@ h3 {
     margin: 0;
     padding: 0 10%;
     height: 80vh;
-    background-color:rgba(205,240,255,1);
+    background-color:#D9F7FF;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -175,7 +193,7 @@ h3 {
 }
 
 .image-box {
-    background-color: rgb(255, 196, 0);
+    background-color: #FEC42F;
     border-radius: 100%;
     width: 50px;
     height: 50px;
@@ -198,6 +216,10 @@ h3 {
     gap: 20px;
 }
 
+.event-text {
+    font-size: 24px;
+}
+
 .about-event-img {
     width: 50%;
 }
@@ -212,15 +234,30 @@ h3 {
     gap: 20px;
 }
 
-.join-party > img {
-    width: 50%;
+.santa-gifts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 150px;
+}
+
+.floating-gifts {
+    position: relative;
+    align-self: start;
+    top: 100px;
+    width: 20vw;
+}
+
+.santa-deers {
+    width: 30vw;
 }
 
 .join-party {
+    width: 80%;
     padding: 0 10%;
     margin: 0;
     height: 100vh;
-    background-color: rgba(205,240,255,1);
+    background-color: #D9F7FF;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -229,7 +266,7 @@ h3 {
 .form-container {
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
 }
 
 .main-form {
@@ -267,7 +304,7 @@ input[type=text]:focus, input[type=email]:focus {
 .icon {
     width: 50px;
     position: relative;
-    top: 220px;
+    top: 280px;
     left: -20px;
     transform: rotate(15deg);
     transition: all 0.2s;
@@ -302,40 +339,13 @@ input[type=text]:focus, input[type=email]:focus {
     gap: 10px;
 }
 
-.fa {
+.social {
     width: 50px;
     height: 50px;
-    font-size: 30px;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
 }
 
-.fa:hover {
+.social:hover {
     opacity: 0.7;
-}
-
-.fa-facebook {
-    background-color: #3B5998;
-    color: white;
-}
-
-.fa-instagram {
-    background: #125688;
-    color: white;
-}
-
-.fa-google {
-    background: #dd4b39;
-    color: white;
-}
-
-.fa-youtube {
-    background: #bb0000;
-    color: white;
 }
 
 @media (max-width: 910px) {
@@ -348,7 +358,7 @@ input[type=text]:focus, input[type=email]:focus {
     .separator {
         padding-bottom: 50px;
         margin-bottom: 50px;
-        border-bottom: 3px solid #165f1b;
+        border-bottom: 3px solid #00873E;
     }
 
     .separator:nth-of-type(3) {
@@ -362,7 +372,9 @@ input[type=text]:focus, input[type=email]:focus {
     }
 
     .christmas-time img {
-        width: 100%;
+        width: 80%;
+        margin-left: 0;
+        margin-top: 50px;
     }
 
     .christmas-card {
@@ -373,6 +385,7 @@ input[type=text]:focus, input[type=email]:focus {
     .santa-is-coming {
         flex-direction: column-reverse;
         height: auto;
+        margin-bottom: 0;
     }
 
     .christmas-wish {
@@ -426,8 +439,18 @@ input[type=text]:focus, input[type=email]:focus {
         width: auto;
     }
 
-    .join-party > img {
-        width: 100%;
+    .santa-gifts {
+        margin-left: 0;
+        margin-bottom: 50px;
+    }
+
+    .floating-gifts {
+        top: 15vw;
+        width: 30vw;
+    }
+
+    .santa-deers {
+        width: 50vw;
     }
 
     .join-party {
@@ -447,6 +470,10 @@ input[type=text]:focus, input[type=email]:focus {
 
     .footer-text {
         text-align: center;
+    }
+
+    .card-heading {
+        font-size: 2.5rem;
     }
 }
 
@@ -474,5 +501,9 @@ input[type=text]:focus, input[type=email]:focus {
 
     .main-form {
         padding: 1.5rem;
+    }
+
+    .icon {
+        width: 35px;
     }
 }
