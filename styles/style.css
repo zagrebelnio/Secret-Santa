@@ -13,7 +13,7 @@ body {
     background-image: linear-gradient(
         90deg, rgba(238,217,174,1) 0%, rgba(241,216,239,1) 50%, rgba(205,240,255,1) 100%
     ), url("../images/gradient1.png");
-    
+    overflow-x: hidden;
 }
 
 .text-green {
@@ -22,6 +22,15 @@ body {
 
 body > * {
    margin: 0 10%;
+}
+
+.bg-bulbe {
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    rotate: 5deg;
+    top: -20px;
+    margin: 0;
 }
 
 .navbar {
@@ -98,11 +107,25 @@ body > * {
     background-color: #00873E;
 }
 
+.bg-santa {
+    position: absolute;
+    rotate: -90deg;
+    font-weight: 400;
+    font-size: 250px;
+    color: transparent;
+    background: linear-gradient(270.12deg, rgba(254, 194, 142, 0.1) 4.92%, rgba(206, 154, 211, 0.1) 102.95%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin: 0;
+    font-family: 'Yeseva One', serif;
+    left: -200px;
+    z-index: -1;
+}
+
 .christmas-time {
-    height: 80vh;
+    height: 100vh;
     display: flex;
     align-items: center;
-    
 }
 
 .christmas-time img {
@@ -128,6 +151,8 @@ h3 {
 
 .card-button {
     border: none;
+    font-size: 18px;
+    font-family: 'DM Sans', sans-serif;;
     background-color:#00873E;
     padding: 1em 3em;
     border-radius: 10px;
