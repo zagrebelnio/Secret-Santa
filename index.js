@@ -18,11 +18,12 @@ function setToCookies() {
     time += 3600 * 1000;
     now.setTime(time);
 
-    let cookieLength = document.cookie.length;
+    let cookieLength = getCookiesLength();
+    let objectsInCookies = cookieLength / 3;
 
-    document.cookie = "fullName" + (cookieLength + 1) + "=" + encodeURIComponent(fullName) + "; expires=" + now.toUTCString();
-    document.cookie = "email" + (cookieLength + 1) + "=" + encodeURIComponent(email) + "; expires=" + now.toUTCString();
-    document.cookie = "subject" + (cookieLength + 1) + "=" + encodeURIComponent(subject) + "; expires=" + now.toUTCString();
+    document.cookie = "fullName" + (objectsInCookies + 1) + "=" + encodeURIComponent(fullName) + "; expires=" + now.toUTCString();
+    document.cookie = "email" + (objectsInCookies + 1) + "=" + encodeURIComponent(email) + "; expires=" + now.toUTCString();
+    document.cookie = "subject" + (objectsInCookies + 1)  + "=" + encodeURIComponent(subject) + "; expires=" + now.toUTCString();
 
     if (randomUserData) {
         alert("You are secret Santa to\n" + randomUserData);
@@ -33,21 +34,46 @@ function setToCookies() {
 
 function getRandomUserDataFromCookies() {
     let allCookies = document.cookie.split(';');
-
-    if (allCookies.length == 0) {
+    console.log(allCookies);
+    setTimeout(() => {
+        
+    }, 5000);
+    if (getCookiesLength() == 0) {
         return null;
     }
 
-    let randomCookie = Math.floor(Math.random() * (allCookies.length / 3));
+    let randomCookie = Math.floor(Math.random() * (getCookiesLength() / 3));
 
     let output = '';
 
     const attributes = ['Full Name', 'Email', 'Subject'];
 
     for (let i = randomCookie * 3, j = 0; i < randomCookie * 3 + 3; i++) {
-        output += attributes[j] + ': ' + decodeURIComponent(allCookies[i].trim()).split('=')[1] + '\n';
+        output += attributes[j] + ': ' + decodeURIComponent(allCookies[i]).split('=')[1] + '\n';
         j++;
     }
 
     return output;
 }
+
+function deleteCookies() {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i];
+        const eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+    console.log(cookies);
+    console.log(`cookies length: ${getCookiesLength()}`);
+}
+
+function getCookiesLength() { 
+    var cookieString = document.cookie; 
+    var cookies = cookieString.split(';');
+    if (cookies == '')
+    {
+        return 0;
+    } 
+    return cookies.length; 
+  } 
